@@ -1,10 +1,35 @@
-.App {
-  text-align: center;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Darker background for a modern look */
+  color: #e0e0e0; /* Softer off-white text for better readability */
+}
+
+/* Main App Container */
+.App {
+  text-align: center;
+  padding: 2.5rem;
+  min-height: 100vh;
+}
+
+/* Logo Animation */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  border-radius: 10px; /* Slight border-radius for softer corners */
+}
+
+.App-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for hover effect */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,21 +38,38 @@
   }
 }
 
+/* Header */
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #6a1b9a, #d500f9); /* Soft gradient with purple tones */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(12px + 2vmin);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Softer shadow for depth */
+  padding: 3rem;
+  border-radius: 16px; /* More rounded corners */
+  background-size: cover;
 }
 
+/* Link */
 .App-link {
-  color: #61dafb;
+  color: #ff4081; /* Vibrant accent color */
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
 }
 
+.App-link:hover {
+  color: #ff80ab; /* Slightly lighter hover color */
+  transform: scale(1.05); /* Subtle scaling effect on hover */
+}
+
+/* Animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +77,172 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Sign-Out Button Styles */
+.sign-out {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sign-out button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Beautiful gradient */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sign-out button:hover {
+  background: linear-gradient(to right, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Subtle upward motion */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.sign-out button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #ff7e5f; /* Focused shadow to indicate button is active */
+}
+/* Style for the Chat Room Form */
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* "Type room name:" Text */
+.room-name-label {
+  color: #2c3e50; /* Dark gray for text */
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Input Field for Room Name */
+.room-name-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+/* Focus State for Input */
+.room-name-input:focus {
+  border-color: #3498db; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.6); /* Soft blue glow */
+  outline: none;
+}
+
+/* Enter Chat Button */
+.enter-chat-button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient from purple to blue */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.enter-chat-button:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Slight upward movement */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.enter-chat-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #3498db; /* Blue focus outline */
+}
+/* Room Name Container */
+.room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 500px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+}
+
+/* Label for Room Name */
+.room label {
+  font-size: 18px;
+  color: #4e5b6e;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Input Field for Room Name */
+.room input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* Focus State for Input */
+.room input:focus {
+  border-color: #6c5ce7; /* Violet border on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.4); /* Soft violet glow */
+}
+
+/* Enter Chat Button */
+.room button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background: linear-gradient(to right, #6c5ce7, #a29bfe);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Enter Chat Button */
+.room button:hover {
+  background: linear-gradient(to right, #a29bfe, #6c5ce7);
+  transform: translateY(-2px); /* Slight upward movement */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Focus Effect for Button */
+.room button:focus {
+  outline: none;
+  box-shadow: 0 0 8px 2px rgba(108, 92, 231, 0.4); /* Violet glow */
 }
